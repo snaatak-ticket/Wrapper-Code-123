@@ -193,7 +193,6 @@ lb_tpye            = "application"
 lb_enable_deletion = false
 
 # Route 53 Configuration
-private_zone_name = "otmservice.site"
 cname_record_name = "employee-portal.otmservice.site"
 cname_record_type = "CNAME"
 cname_record_ttl  = "30"
