@@ -116,7 +116,6 @@ module "networking_module" {
   lb_enable_deletion = var.lb_enable_deletion
 
   # Route 53 Configuration
-  private_zone_name = var.private_zone_name
   cname_record_name = var.cname_record_name
   cname_record_type = var.cname_record_type
   cname_record_ttl  = var.cname_record_ttl
