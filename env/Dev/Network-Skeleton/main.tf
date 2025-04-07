@@ -1,5 +1,4 @@
 module "networking_module" {
-  #source = "./Networking_Module"
   source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//Network-Skeleton?ref=Aayush-SCRUM-343"
 
   # Region and environment
