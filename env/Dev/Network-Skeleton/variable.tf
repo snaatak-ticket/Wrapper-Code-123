@@ -660,11 +660,6 @@ variable "lb_enable_deletion" {
 }
 
 ## Route 53 
-variable "private_zone_name" {
-  description = "The name of the private Route53 hosted zone where DNS records will be created"
-  type        = string
-  default     = "otmservice.site"
-}
 
 variable "cname_record_name" {
   description = "The name/subdomain for the CNAME record (e.g., 'api' for api.example.com)"
