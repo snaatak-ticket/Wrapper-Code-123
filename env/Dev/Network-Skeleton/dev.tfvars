@@ -140,8 +140,8 @@ security_groups_rule = {
   frontend = {
     name = "frontend"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 3000, to_port = 3000, protocol = "tcp", description = "HTTP access", source_sg_names = ["alb"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 3000, to_port = 3000, protocol = "tcp", description = "HTTP access from ALB", source_sg_names = ["alb"] }
 
     ]
     egress_rules = [
@@ -153,8 +153,8 @@ security_groups_rule = {
   attendance = {
     name = "attendance"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access", source_sg_names = ["alb"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access from ALB", source_sg_names = ["alb"] }
 
     ]
     egress_rules = [
@@ -166,8 +166,8 @@ security_groups_rule = {
   employee = {
     name = "employee"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access", source_sg_names = ["alb"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access from ALB", source_sg_names = ["alb"] }
 
     ]
     egress_rules = [
@@ -179,8 +179,8 @@ security_groups_rule = {
   salary = {
     name = "salary"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access", source_sg_names = ["alb"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 8080, to_port = 8080, protocol = "tcp", description = "HTTP access from ALB", source_sg_names = ["alb"] }
 
     ]
     egress_rules = [
@@ -192,8 +192,8 @@ security_groups_rule = {
   postgresql = {
     name = "postgresql"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 5432, to_port = 5432, protocol = "tcp", description = "HTTP access", source_sg_names = ["attendance"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 5432, to_port = 5432, protocol = "tcp", description = "DB access from attendance API", source_sg_names = ["attendance"] }
 
     ]
     egress_rules = [
@@ -205,9 +205,9 @@ security_groups_rule = {
   scylla = {
     name = "scylla"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 9042, to_port = 9042, protocol = "tcp", description = "HTTP access", source_sg_names = ["salary"] },
-      { from_port = 9042, to_port = 9042, protocol = "tcp", description = "HTTP access", source_sg_names = ["employee"] }
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 9042, to_port = 9042, protocol = "tcp", description = "DB access from salary API", source_sg_names = ["salary"] },
+      { from_port = 9042, to_port = 9042, protocol = "tcp", description = "DB access employee API", source_sg_names = ["employee"] }
     ]
     egress_rules = [
       { from_port = 0, to_port = 0, protocol = "-1", description = "Allow all outbound", cidr_blocks = ["0.0.0.0/0"] }
@@ -218,10 +218,10 @@ security_groups_rule = {
   redis = {
     name = "redis"
     ingress_rules = [
-      { from_port = 22, to_port = 22, protocol = "tcp", description = "HTTPS access", source_sg_names = ["openvpn"] },
-      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "HTTP access", source_sg_names = ["salary"] },
-      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "HTTP access", source_sg_names = ["employee"] },
-      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "HTTP access", source_sg_names = ["attendance"] },
+      { from_port = 22, to_port = 22, protocol = "tcp", description = "SSH access from Openvpn", source_sg_names = ["openvpn"] },
+      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "DB access from salary API", source_sg_names = ["salary"] },
+      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "DB access from employee API", source_sg_names = ["employee"] },
+      { from_port = 6379, to_port = 6379, protocol = "tcp", description = "DB access from attendance API", source_sg_names = ["attendance"] },
 
     ]
     egress_rules = [
