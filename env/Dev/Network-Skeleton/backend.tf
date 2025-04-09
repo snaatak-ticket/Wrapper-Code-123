@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "p12-otms-tf-state-bucket"
-    key            = "env/dev/terraform.tfstate"
-    region         = "us-east-1"
+    bucket         = "otms-tf-state-bucket"
+    key            = "env/dev/module/network-skeleton/terraform.tfstate"
+    region         = "us-east-2"
     dynamodb_table = "dev-otms-tf-lock-table"
   }
 }
