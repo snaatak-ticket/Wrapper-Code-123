@@ -20,7 +20,6 @@ module "asg" {
   lt_version         = var.lt_version
   asg_tags           = local.asg_tags
 
-  listener_arn        = var.listener_arn
   priority            = var.priority
   alb_listener_action = var.alb_listener_action
   path_pattern        = var.path_pattern
@@ -49,4 +48,5 @@ module "asg" {
   healthy_threshold     = var.healthy_threshold
   unhealthy_threshold   = var.unhealthy_threshold
   alb_arn               = data.terraform_remote_state.otms_vpc.outputs.alb_arn
+  listener_arn        = local.listener_arn
 }

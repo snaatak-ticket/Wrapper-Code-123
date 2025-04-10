@@ -14,7 +14,6 @@ target_group_arn   = null
 launch_template_id = null
 lt_version = "$Latest"
 
-listener_arn        = null
 priority            = 4
 alb_listener_action = "forward"
 path_pattern        = "/app/v1/attendance/*"
