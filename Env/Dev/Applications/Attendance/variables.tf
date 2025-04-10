@@ -201,3 +201,8 @@ variable "region" {
   default     = "us-east-1"
   description = "enter region name"
 }
+
+variable "enable_http_listener" {
+  description = "pass this as 1 only in case of frontend"
+  type = bool
+}

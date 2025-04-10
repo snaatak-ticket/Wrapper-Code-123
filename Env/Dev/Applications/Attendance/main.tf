@@ -1,6 +1,6 @@
 module "asg" {
-  source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
-  #source            = "../../../../../ASG"
+  # source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
+  source            = "../../../../../ASG"
   region            = var.region
   template_name     = var.template_name
   ami_id            = data.aws_ami.attendance_ami.id
@@ -25,6 +25,7 @@ module "asg" {
   alb_listener_action = var.alb_listener_action
   path_pattern        = var.path_pattern
   lr_tags             = local.lr_tags
+  enable_http_listener = var.enable_http_listener
 
   asg_policy_name                  = var.asg_policy_name
   asg_policy_type                  = var.asg_policy_type

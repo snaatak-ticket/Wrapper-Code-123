@@ -42,3 +42,4 @@ health_check_protocol = "HTTP"
 health_check_timeout  = 5
 healthy_threshold     = 2
 unhealthy_threshold   = 2
+enable_http_listener = 0
