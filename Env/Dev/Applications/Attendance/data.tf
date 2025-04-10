@@ -10,7 +10,7 @@ data "terraform_remote_state" "otms_vpc" {
 
 data "aws_ami" "attendance_ami" {
   filter {
-    name = "name"
+    name   = "name"
     values = ["attendance _ami_copy"]
   }
 }

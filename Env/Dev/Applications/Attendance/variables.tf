@@ -2,11 +2,25 @@ variable "template_name" {
   description = "Name of LT"
   type        = string
 }
+variable "env" {
+  description = "Environment name (e.g. dev, prod)"
+  type        = string
+}
 
-# variable "ami_id" {
-#   description = "AMI for launch template"
-#   type        = string
-# }
+variable "owner" {
+  description = "Owner tag"
+  type        = string
+}
+
+variable "project_name" {
+  description = "name of project"
+  type        = string
+}
+
+variable "application_name" {
+  description = "name of application"
+  type        = string
+}
 
 variable "instance_type" {
   description = "Instance size"
@@ -16,21 +30,6 @@ variable "instance_type" {
 variable "key_name" {
   description = "Key Pair name"
   type        = string
-}
-
-# variable "subnet_id" {
-#   description = "Subnet ID"
-#   type        = string
-# }
-
-# variable "security_group_id" {
-#   description = "Security group ID"
-#   type        = string
-# }
-
-variable "common_tags" {
-  description = "Common tags for resources"
-  type        = map(string)
 }
 
 variable "asg_name" {
@@ -53,6 +52,10 @@ variable "min_size" {
   type        = number
 }
 
+variable "lt_version" {
+  description = "varsion for lt in asg"
+  type        = string
+}
 variable "target_group_arn" {
   description = "Optional: ARN of an existing target group"
   type        = string
@@ -63,16 +66,6 @@ variable "launch_template_id" {
   description = "Optional: Launch Template ID to use"
   type        = string
   default     = null
-}
-
-variable "environment" {
-  description = "Environment name (e.g. dev, prod)"
-  type        = string
-}
-
-variable "owner" {
-  description = "Owner tag"
-  type        = string
 }
 
 variable "listener_arn" {
@@ -98,11 +91,6 @@ variable "path_pattern" {
 
 variable "rule_name" {
   description = "Name of the listener rule"
-  type        = string
-}
-
-variable "env" {
-  description = "Environment tag"
   type        = string
 }
 
@@ -158,7 +146,7 @@ variable "step_scaling_adjustment" {
   default     = 1
 }
 
-variable "name" {
+variable "tg_name" {
   description = "Name of the target group"
   type        = string
 }
@@ -177,11 +165,6 @@ variable "target_type" {
   description = "Target type (instance, ip, lambda)"
   type        = string
 }
-
-# variable "vpc_id" {
-#   description = "VPC ID for the target group"
-#   type        = string
-# }
 
 variable "health_check_interval" {
   description = "Time between health checks"
@@ -213,18 +196,8 @@ variable "unhealthy_threshold" {
   type        = number
 }
 
-variable "tags" {
-  description = "Tags for target group"
-  type        = map(string)
-}
-
 variable "region" {
   type        = string
   default     = "us-east-1"
   description = "enter region name"
 }
-
-# variable "alb_arn" {
-#   type = string
-#   description = "alb arn"
-# }

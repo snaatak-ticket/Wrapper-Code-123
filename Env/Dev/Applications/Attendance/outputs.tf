@@ -15,7 +15,7 @@ output "launch_template_name" {
 }
 
 output "listener_rule_arn" {
-  value       = module.asg.listener_rule_arn
+  value = module.asg.listener_rule_arn
 }
 
 output "target_group_name" {
