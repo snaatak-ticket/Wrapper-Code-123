@@ -1,4 +1,4 @@
-region       = "eu-north-1"
+region       = "us-east-2"
 project_name = "otms"
 env          = "dev"
 owner        = "aayush"
@@ -16,7 +16,7 @@ subnet_names = ["public", "frontend", "application", "database", "public-2"]
 
 subnet_cidrs = ["192.168.0.0/28", "192.168.0.16/28", "192.168.0.64/27", "192.168.0.48/28", "192.168.0.32/28"]
 
-subnet_azs = ["eu-north-1a", "eu-north-1a", "eu-north-1a", "eu-north-1a", "eu-north-1b"]
+subnet_azs = ["us-east-2a", "us-east-2a", "us-east-2a", "us-east-2a", "us-east-2b"]
 
 #################### Route Table ########################
 
