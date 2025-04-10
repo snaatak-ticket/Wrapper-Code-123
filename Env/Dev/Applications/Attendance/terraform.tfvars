@@ -1,6 +1,7 @@
-template_name = "dev-otms-lt"
-instance_type = "t2.micro"
-key_name      = "samrat"
+region = "us-east-2"
+template_name    = "dev-otms-attendance-lt"
+instance_type    = "t2.micro"
+key_name         = "otms_dev"
 env              = "dev"
 owner            = "Aman"
 project_name     = "otms"
@@ -12,7 +13,7 @@ max_size           = 4
 min_size           = 1
 target_group_arn   = null
 launch_template_id = null
-lt_version = "$Latest"
+lt_version         = "$Latest"
 
 priority            = 4
 alb_listener_action = "forward"
@@ -41,4 +42,4 @@ health_check_protocol = "HTTP"
 health_check_timeout  = 5
 healthy_threshold     = 2
 unhealthy_threshold   = 2
-enable_http_listener = 0
+enable_http_listener  = false

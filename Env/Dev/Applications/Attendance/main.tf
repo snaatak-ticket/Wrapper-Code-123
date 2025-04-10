@@ -1,13 +1,14 @@
 module "asg" {
-  # source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
-  source            = "../../../../../ASG"
+  source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
+  #source            = "../../../../../ASG"
   region            = var.region
   template_name     = var.template_name
   ami_id            = data.aws_ami.attendance_ami.id
+  # ami_id = "ami-082b72daee78d1a26"
   instance_type     = var.instance_type
   key_name          = var.key_name
-  subnet_id         = data.terraform_remote_state.otms_vpc.outputs.subnet_ids.dev-otms-application-subnet
-  security_group_id = data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.attendance
+  subnet_id         = data.terraform_remote_state.otms_ns.outputs.subnet_ids.dev-otms-application-subnet
+  security_group_id = data.terraform_remote_state.otms_ns.outputs.all_sg_ids.attendance
   lt_tags           = local.lt_tags
 
   tg_tags            = local.tg_tags
@@ -20,10 +21,10 @@ module "asg" {
   lt_version         = var.lt_version
   asg_tags           = local.asg_tags
 
-  priority            = var.priority
-  alb_listener_action = var.alb_listener_action
-  path_pattern        = var.path_pattern
-  lr_tags             = local.lr_tags
+  priority             = var.priority
+  alb_listener_action  = var.alb_listener_action
+  path_pattern         = var.path_pattern
+  lr_tags              = local.lr_tags
   enable_http_listener = var.enable_http_listener
 
   asg_policy_name                  = var.asg_policy_name
@@ -40,13 +41,13 @@ module "asg" {
   port                  = var.port
   protocol              = var.protocol
   target_type           = var.target_type
-  vpc_id                = data.terraform_remote_state.otms_vpc.outputs.vpc_id
+  vpc_id                = data.terraform_remote_state.otms_ns.outputs.vpc_id
   health_check_interval = var.health_check_interval
   health_check_path     = var.health_check_path
   health_check_protocol = var.health_check_protocol
   health_check_timeout  = var.health_check_timeout
   healthy_threshold     = var.healthy_threshold
   unhealthy_threshold   = var.unhealthy_threshold
-  alb_arn               = data.terraform_remote_state.otms_vpc.outputs.alb_arn
-  listener_arn        = local.listener_arn
+  alb_arn               = data.terraform_remote_state.otms_ns.outputs.alb_arn
+  listener_arn          = local.listener_arn
 }

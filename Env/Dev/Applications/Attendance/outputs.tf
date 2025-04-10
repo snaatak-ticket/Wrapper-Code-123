@@ -25,3 +25,7 @@ output "target_group_name" {
 output "target_group_id" {
   value = module.asg.target_group_id
 }
+
+output "alb_lr_arn" {
+  value = module.asg.alb_lr_arn
+}

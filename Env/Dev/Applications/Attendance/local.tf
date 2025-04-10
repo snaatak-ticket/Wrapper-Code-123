@@ -24,6 +24,6 @@ locals {
     Name = "${var.env}-${var.project_name}-${var.application_name}-lr"
   })
 
-  listener_arn = var.enable_http_listener ? null : data.aws_lb_listener.existing_http[0].arn
+  listener_arn = var.enable_http_listener ? null : data.terraform_remote_state.frontend[0].outputs.alb_lr_arn
 
 }

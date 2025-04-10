@@ -1,27 +1,27 @@
-data "terraform_remote_state" "otms_vpc" {
+data "terraform_remote_state" "otms_ns" {
   backend = "s3"
 
   config = {
-    bucket = "p12-bucket-tfstate"
-    key    = "env/dev/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "otms-sprint5-bucket"
+    key    = "env/dev/module/network-skeleton/terraform.tfstate"
+    region = "us-east-2"
   }
 }
 
 data "aws_ami" "attendance_ami" {
   filter {
     name   = "name"
-    values = ["attendance _ami_copy"]
+    values = ["dev-otms-attendance-ami"]
   }
 }
 
-data "terraform_remote_state" "http_arn" {
-  count = var.enable_http_listener ? 0 : 1
+data "terraform_remote_state" "frontend" {
+  count   = var.enable_http_listener ? 0 : 1
   backend = "s3"
 
   config = {
-    bucket = "p12-bucket-tfstate"
-    key    = "env/dev/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "otms-sprint5-bucket"
+    key    = "env/dev/Applications/Frontend/terraform.tfstate"
+    region = "us-east-2"
   }
 }

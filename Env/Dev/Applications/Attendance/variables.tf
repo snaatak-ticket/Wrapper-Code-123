@@ -198,11 +198,11 @@ variable "unhealthy_threshold" {
 
 variable "region" {
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
   description = "enter region name"
 }
 
 variable "enable_http_listener" {
   description = "pass this as 1 only in case of frontend"
-  type = bool
+  type        = bool
 }
