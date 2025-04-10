@@ -1,5 +1,5 @@
 module "networking_module" {
-  source = "git::https://github.com/snaatak-Zero-Downtime-Crew/Tf-Modules.git//Network-Skeleton?ref=Aayush-SCRUM-343"
+  source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//Network-Skeleton?ref=Aayush-SCRUM-343"
 
   # Region and environment
   region               = var.region
