@@ -1,7 +1,7 @@
 #################### VPC ########################
 variable "region" {
   type        = string
-  default     = "eu-north-1"
+  default     = "us-east-2"
   description = "enter region name"
 }
 variable "env" {
@@ -64,7 +64,7 @@ variable "subnet_cidrs" {
 variable "subnet_azs" {
   description = "List of availability zones for subnets"
   type        = list(string)
-  default     = ["eu-north-1a", "eu-north-1a", "eu-north-1a", "eu-north-1a", "eu-north-1b"]
+  default     = ["us-east-2a", "us-east-2a", "us-east-2a", "us-east-2a", "us-east-2b"]
 }
 
 #################### NAT ########################
