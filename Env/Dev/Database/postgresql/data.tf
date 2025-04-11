@@ -13,6 +13,6 @@ data "terraform_remote_state" "otms_vpc" {
 data "aws_ami" "postgresql_ami" {
   filter {
     name   = "name"
-    values = ["attendance_ami_updated"]
+    values = ["postgresql_ami_updated"]
   }
 }
