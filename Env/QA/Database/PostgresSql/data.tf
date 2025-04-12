@@ -5,7 +5,7 @@ data "terraform_remote_state" "otms_vpc" {
 
   config = {
     bucket       = "otms-sprint5-bucket"
-    key          = "env/dev/module/network-skeleton/terraform.tfstate"  #path to specific tfstate file
+    key          = "env/qa/module/network-skeleton/terraform.tfstate"  #path to specific tfstate file
     region       = "us-east-2"
     use_lockfile = true    # here using lockfile instead of deprecated dynamodb table
   }
