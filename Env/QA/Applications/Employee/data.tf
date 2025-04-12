@@ -2,16 +2,16 @@ data "terraform_remote_state" "otms_ns" {
   backend = "s3"
 
   config = {
-    bucket = "p-12-qa-bucket"
-    key    = "env/qa/network skeleton/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "otms-sprint5-bucket"
+    key    = "env/qa/module/network-skeleton/terraform.tfstate"
+    region = "us-east-2"
   }
 }
 
 data "aws_ami" "employee_ami" {
   filter {
     name   = "name"
-    values = ["qa-otms-employee-ami"]
+    values = ["dev-otms-employee-ami"]
   }
 }
 
@@ -20,8 +20,8 @@ data "terraform_remote_state" "frontend" {
   backend = "s3"
 
   config = {
-    bucket = "p-12-qa-bucket"
-    key    = "env/qa/network skeleton/terraform.tfstate"
-    region = "us-east-1"
+    bucket = "otms-sprint5-bucket"
+    key    = "env/qa/Applications/Frontend/terraform.tfstate"
+    region = "us-east-2"
   }
 }
