@@ -1,10 +1,8 @@
 module "asg" {
   source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
-  #source            = "../../../../../ASG"
   region            = var.region
   template_name     = var.template_name
   ami_id            = data.aws_ami.employee_ami.id
-  # ami_id = "ami-0d2407b2d38baec3c"
   instance_type     = var.instance_type
   key_name          = var.key_name
   subnet_id         = data.terraform_remote_state.otms_ns.outputs.subnet_ids.qa-otms-application-subnet
