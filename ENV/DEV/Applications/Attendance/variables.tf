@@ -3,7 +3,7 @@ variable "template_name" {
   type        = string
 }
 variable "env" {
-  description = "Environment name (e.g. qa, prod)"
+  description = "Environment name (e.g. dev, prod)"
   type        = string
 }
 
