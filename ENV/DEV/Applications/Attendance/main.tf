@@ -1,13 +1,14 @@
 module "asg" {
-  source = "git::https://anuj169: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@github.com/snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
-
+  source =  "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//ASG?ref=Aman-SCRUM-344"
+  #source            = "../../../../../ASG"
   region            = var.region
   template_name     = var.template_name
   ami_id            = data.aws_ami.attendance_ami.id
+  # ami_id = "ami-082b72daee78d1a26"
   instance_type     = var.instance_type
   key_name          = var.key_name
-  subnet_id         = data.terraform_remote_state.otms_ns.outputs.subnet_ids.dev-otms-application-subnet
-  security_group_id = data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.attendance
+  subnet_id         = data.terraform_remote_state.otms_ns.outputs.subnet_ids.qa-otms-application-subnet
+  security_group_id = data.terraform_remote_state.otms_ns.outputs.all_sg_ids.attendance
   lt_tags           = local.lt_tags
 
   tg_tags            = local.tg_tags
