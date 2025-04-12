@@ -10,6 +10,10 @@ variable "number_of_instances" {
   default     = 1
 }
 
+# variable "ami_id" {
+#   description = "AMI ID for the EC2 instances"
+#   type        = string
+# }
 
 variable "instance_type" {
   description = "EC2 instance type"
@@ -22,6 +26,16 @@ variable "key_name" {
   type        = string
   default     = "otms_dev"
 }
+
+# variable "subnet_id" {
+#   description = "Subnet ID where the EC2 instance will be launched"
+#   type        = string
+# }
+
+# variable "security_groups" {
+#   description = "List of security group IDs"
+#   type        = list(string)
+# }
 
 ####tags###########
 variable "env" {
