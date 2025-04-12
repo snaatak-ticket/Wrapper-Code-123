@@ -1,13 +1,13 @@
-region           = "us-east-2"
-template_name    = "dev-otms-lt"
+region = "us-east-2"
+template_name    = "qa-otms-attendance-lt"
 instance_type    = "t2.micro"
 key_name         = "otms_dev"
-env              = "QA"
+env              = "qa"
 owner            = "Anuj"
 project_name     = "otms"
 application_name = "attendance"
 
-asg_name           = "dev-otms-attendance-asg"
+asg_name           = "qa-otms-attendance-asg"
 desired_capacity   = 1
 max_size           = 4
 min_size           = 1
@@ -15,7 +15,7 @@ target_group_arn   = null
 launch_template_id = null
 lt_version         = "$Latest"
 
-priority            = 3
+priority            = 4
 alb_listener_action = "forward"
 path_pattern        = "/app/v1/attendance/*"
 rule_name           = "dev-otms-attendance-lr"
@@ -31,7 +31,7 @@ step_adjustment_type             = "ChangeInCapacity"
 step_metric_interval_lower_bound = 0
 step_scaling_adjustment          = 1
 
-tg_name     = "dev-otms-attendance-tg"
+tg_name     = "qa-otms-attendance-tg"
 port        = 8080
 protocol    = "HTTP"
 target_type = "instance"
