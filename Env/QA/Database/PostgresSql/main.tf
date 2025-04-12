@@ -7,7 +7,7 @@ module "postgresql" {
   instance_type       = var.instance_type
   key_name            = var.key_name
   owner_name          = var.owner_name
-  subnet_id           = data.terraform_remote_state.otms_vpc.outputs.subnet_ids.dev-otms-database-subnet
+  subnet_id           = data.terraform_remote_state.otms_vpc.outputs.subnet_ids.qa-otms-database-subnet
   security_groups     = [data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.postgresql]
   env                 = var.env
   number_of_instances = var.number_of_instances
