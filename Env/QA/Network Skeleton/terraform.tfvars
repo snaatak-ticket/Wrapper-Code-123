@@ -1,4 +1,4 @@
-region       = "us-east-1"
+region       = "us-east-2"
 project_name = "otms"
 env          = "qa"
 owner        = "sheetal"
@@ -16,7 +16,7 @@ subnet_names = ["public-a", "frontend", "application", "database", "public-b"]
 
 subnet_cidrs = ["192.168.64.0/28", "192.168.64.16/28", "192.168.64.32/28", "192.168.64.48/28", "192.168.66.0/28"]
 
-subnet_azs = ["us-east-1a", "us-east-1a", "us-east-1a", "us-east-1a", "us-east-1b"]
+subnet_azs = ["us-east-2a", "us-east-2a", "us-east-2a", "us-east-2a", "us-east-2b"]
 
 #################### Route Table ########################
 
