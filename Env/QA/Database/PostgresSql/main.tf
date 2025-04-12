@@ -1,6 +1,6 @@
 module "postgresql" {
   source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//Standalone-VM?ref=Prashant-SCRUM-345"  #source from git repo
-
+  count               = var.number_of_instances
   project_name        = var.project_name
   instance_name       = var.instance_name
   ami_id              = data.aws_ami.postgresql.id  # ami id used in postgres fetched form datat block
