@@ -1,7 +1,7 @@
-region = "us-east-1"
+region = "us-east-2"
 template_name    = "qa-otms-employee-lt"
 instance_type    = "t2.micro"
-key_name         = "otms_qa"
+key_name         = "otms_dev"
 env              = "qa"
 owner            = "Ramratan"
 project_name     = "otms"
@@ -18,7 +18,7 @@ lt_version         = "$Latest"
 priority            = 4
 alb_listener_action = "forward"
 path_pattern        = "/app/v1/employee/*"
-rule_name           = "dev-otms-employee-lr"
+rule_name           = "qa-otms-employee-lr"
 
 
 asg_policy_name                  = "scale-policy"
