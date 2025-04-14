@@ -12,6 +12,4 @@ module "postgresql" {
   env                 = var.env
   number_of_instances = var.number_of_instances
   aws_region          = var.aws_region
-  #owner               = var.owner      # only if the module supports this
-  #tag_name            = local.tag_name # only if the module supports this
 }
