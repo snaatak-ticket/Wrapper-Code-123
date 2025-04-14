@@ -13,6 +13,6 @@ data "terraform_remote_state" "otms_vpc" {
 data "aws_ami" "scylla_ami" {
   filter {
     name   = "name"
-    values = ["dev-otms-scylladb-ami"]
+    values = ["salary_ami_updated"]
   }
 }
