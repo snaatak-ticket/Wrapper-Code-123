@@ -46,7 +46,7 @@ module "networking_module" {
   lb_enable_deletion = var.lb_enable_deletion
 
   # Route 53 Configuration
-  create_route53    = var.create_route53
-  record_name = var.record_name
-  record_type = var.record_type
+  create_route53 = var.create_route53
+  record_name    = var.record_name
+  record_type    = var.record_type
 }
