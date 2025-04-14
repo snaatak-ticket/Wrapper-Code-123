@@ -1,27 +1,18 @@
-data "terraform_remote_state" "otms_ns" {
+data "terraform_remote_state" "otms_vpc" {
   backend = "s3"
 
   config = {
-    bucket = "otms-sprint5-bucket"
-    key    = "env/qa/module/network-skeleton/terraform.tfstate"
-    region = "us-east-2"
+    bucket         = "otms-sprint5-bucket"
+    key            = "env/dev/module/network-skeleton/terraform.tfstate"
+    region         = "us-east-2"
+    dynamodb_table = "dev-otms-tf-lock-table"
   }
 }
 
-data "aws_ami" "salary_ami" {
+
+data "aws_ami" "scylla_ami" {
   filter {
     name   = "name"
-    values = ["dev-otms-salary-ami"]
-  }
-}
-
-data "terraform_remote_state" "frontend" {
-  count   = var.enable_http_listener ? 0 : 1
-  backend = "s3"
-
-  config = {
-    bucket = "otms-sprint5-bucket"
-    key    = "env/qa/Applications/Frontend/terraform.tfstate"
-    region = "us-east-2"
+    values = ["salary_ami_updated"]
   }
 }
