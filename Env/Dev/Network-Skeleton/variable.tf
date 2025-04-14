@@ -227,24 +227,16 @@ variable "create_alb" {
 
 #################### Route 53 DNS Records ########################
 
-variable "cname_record_name" {
+variable "record_name" {
   description = "The name/subdomain for the CNAME record (e.g., 'api' for api.example.com)"
   type        = string
-  default     = "employee-portal.otmservice.site"
 }
 
-variable "cname_record_type" {
+variable "record_type" {
   description = "The DNS record type - should typically be 'CNAME' for canonical name records"
   type        = string
-  default     = "CNAME"
+  default     = "A"
 }
-
-variable "cname_record_ttl" {
-  description = "Time-to-live (TTL) value for the DNS record in seconds. Controls how long DNS resolvers cache the record."
-  type        = string
-  default     = "30"
-}
-
 
 variable "create_route53" {
   description = "Set to true to create Route 53 resources"

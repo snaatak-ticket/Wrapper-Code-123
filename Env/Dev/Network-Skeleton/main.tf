@@ -47,8 +47,6 @@ module "networking_module" {
 
   # Route 53 Configuration
   create_route53    = var.create_route53
-  cname_record_name = var.cname_record_name
-  cname_record_type = var.cname_record_type
-  cname_record_ttl  = var.cname_record_ttl
-
+  record_name = var.record_name
+  record_type = var.record_type
 }

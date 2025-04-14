@@ -41,12 +41,3 @@ output "alb_dns" {
   description = "DNS of the alb"
 }
 
-# Route 53 
-
-output "aws_route53_zone_id" {
-  value = module.networking_module.aws_route53_zone_id
-}
-
-output "cname_record_id" {
-  value = module.networking_module.cname_record_id
-}
