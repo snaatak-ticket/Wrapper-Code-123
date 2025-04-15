@@ -10,7 +10,6 @@ module "scylladb" {
   subnet_id             = data.terraform_remote_state.otms_vpc.outputs.subnet_ids.qa-otms-database-subnet
   security_groups       = [data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.scylla]
   env                   = var.env
-  number_of_instances   = var.number_of_instances
   aws_region            = var.aws_region
   owner_name            = var.owner # only if the module supports this
   device_name           = "/dev/sda1"
