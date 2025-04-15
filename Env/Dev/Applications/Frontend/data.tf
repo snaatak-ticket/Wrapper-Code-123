@@ -11,6 +11,6 @@ data "terraform_remote_state" "network" {
 data "aws_ami" "frontend_ami" {
   filter {
     name   = "name"
-    values = ["otms-frontend-ami"]
+    values = ["dev-otms-frontend-ami"]
   }
 }
