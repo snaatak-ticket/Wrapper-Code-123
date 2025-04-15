@@ -1,7 +1,7 @@
 module "redis" {
   source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//Standalone-VM?ref=Prashant-SCRUM-345"
 
-  # count                 = tonumber(var.number_of_instances)
+  count                 = var.number_of_instances
   project_name          = var.project_name
   instance_name         = var.instance_name
   ami_id                = data.aws_ami.redis_ami.id
