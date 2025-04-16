@@ -47,3 +47,24 @@ variable "owner" {
    description = "Project creater identifier"
    type        = string
  }
+
+variable "device_name" {
+  type    = string
+  default = "/dev/sda1"
+}
+
+variable "ebs_volume_size" {
+  type = number
+  description = "EBS volume size in GB"
+}
+
+variable "ebs_volume_type" {
+  type = string
+  description = "EBS volume type"
+}
+
+
+variable "delete_on_termination" {
+  type        = bool
+  description = "Whether the volume should be deleted on instance termination"
+}
