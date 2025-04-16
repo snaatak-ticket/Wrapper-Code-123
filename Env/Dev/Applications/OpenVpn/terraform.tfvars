@@ -7,3 +7,7 @@ env                 = "dev"
 project_name        = "otms"
 instance_name       = "openvpn"
 owner               = "Pravesh"
+device_name           = "/dev/sda1"
+ebs_volume_size       = "20"
+ebs_volume_type       = "gp2"
+delete_on_termination = true
