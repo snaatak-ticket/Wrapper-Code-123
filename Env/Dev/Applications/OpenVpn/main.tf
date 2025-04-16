@@ -1,0 +1,19 @@
+module "openvpn" {
+  source = "git::git@github.com:snaatak-Zero-Downtime-Crew/Tf-Modules.git//Standalone-VM?ref=Prashant-SCRUM-345"
+
+  project_name          = var.project_name
+  instance_name         = var.instance_name
+  ami_id                = var.ami_id
+  instance_type         = var.instance_type
+  key_name              = var.key_name
+  subnet_id = data.terraform_remote_state.otms_vpc.outputs.subnet_ids["dev-otms-public-subnet"]
+  security_groups       = [data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.openvpn]
+  env                   = var.env
+  number_of_instances   = var.number_of_instances
+  aws_region            = var.aws_region
+  owner_name            = var.owner # only if the module supports this
+  device_name           = "/dev/sda1"
+  ebs_volume_size       = "20"
+  ebs_volume_type       = "gp2"
+  delete_on_termination = true
+}
