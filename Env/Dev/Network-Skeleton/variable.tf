@@ -195,6 +195,18 @@ variable "create_sg" {
   default     = true
 }
 
+#################### VPC Peering ########################
+
+variable "peering_connection" {
+  type        = bool
+  default     = true
+}
+
+variable "vpc_accept" {
+  type        = bool
+  default     = true
+}
+
 #################### Application Load Balancer ########################
 
 variable "alb_name" {
