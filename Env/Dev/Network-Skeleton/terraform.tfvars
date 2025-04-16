@@ -232,7 +232,7 @@ security_groups_rule = {
 #################### VPC Peering ########################
 
 peering_connection = true
-vpc_accept         = tru
+vpc_accept         = true
 
 #################### Application Load Balancer ########################
 
