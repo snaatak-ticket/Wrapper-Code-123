@@ -31,6 +31,10 @@ module "networking_module" {
   nacl_names  = var.nacl_names
   nacl_rules  = var.nacl_rules
 
+  # VPC Peering 
+  peering_connection = var.peering_connection
+  vpc_accept = var.vpc_accept
+
   #################### Security Groups ########################
 
   create_sg            = var.create_sg
