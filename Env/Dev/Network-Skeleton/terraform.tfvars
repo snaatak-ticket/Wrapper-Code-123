@@ -229,6 +229,7 @@ security_groups_rule = {
     ]
   }
 }
+
 #################### VPC Peering ########################
 
 peering_connection = true
