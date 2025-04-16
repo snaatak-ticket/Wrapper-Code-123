@@ -10,11 +10,6 @@ variable "number_of_instances" {
   default     = 1
 }
 
-# variable "ami_id" {
-#   description = "AMI ID for the EC2 instances"
-#   type        = string
-# }
-
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
