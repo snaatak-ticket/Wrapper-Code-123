@@ -3,6 +3,6 @@ terraform {
     bucket         = "prod-otms-bucket"
     key            = "env/dev/module/network-skeleton/terraform.tfstate"
     region         = "us-east-2"
-    dynamodb_table = "dev-otms-tf-lock-table"
+    dynamodb_table = "otms-tf-lock-table"
   }
 }
