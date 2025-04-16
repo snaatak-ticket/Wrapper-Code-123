@@ -114,7 +114,7 @@ security_groups_rule = {
       { from_port = 80, to_port = 80, protocol = "tcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] },
       { from_port = 22, to_port = 22, protocol = "tcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] },
       { from_port = 443, to_port = 443, protocol = "tcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] },
-      { from_port = 943, to_port = 943, protocol = "rcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] },
+      { from_port = 943, to_port = 943, protocol = "tcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] },
       { from_port = 945, to_port = 945, protocol = "tcp", description = "Allow OpenVPN", cidr_blocks = ["0.0.0.0/0"], source_sg_names = [] }
     ]
     egress_rules = [
