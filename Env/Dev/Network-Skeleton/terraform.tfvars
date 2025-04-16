@@ -234,6 +234,9 @@ security_groups_rule = {
 
 peering_connection = true
 vpc_accept         = true
+vpc_name           = "manage-otms-vpc"
+public_rt_name     = "manage-otms-public-rt"
+private_rt_name    = "manage-otms-private-rt"
 
 #################### Application Load Balancer ########################
 
