@@ -206,22 +206,22 @@ variable "vpc_accept" {
   type    = bool
   default = true
 }
-variable "vpc_name" {
+variable "manage_vpc" {
   description = "Name tag of the VPC to lookup"
   type        = string
-  default     = ""
+  default     = "manage-otms-vpc"
 }
 
 variable "public_rt_name" {
   description = "Name tag of the public route table"
   type        = string
-  default     = ""
+  default     = "manage-otms-public-rt"
 }
 
 variable "private_rt_name" {
   description = "Name tag of the private route table"
   type        = string
-  default     = ""
+  default     = "manage-otms-private-rt"
 }
 
 #################### Application Load Balancer ########################
