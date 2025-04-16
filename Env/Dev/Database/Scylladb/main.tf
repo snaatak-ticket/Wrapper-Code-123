@@ -11,7 +11,7 @@ module "scylladb" {
   security_groups       = [data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.scylla]
   env                   = var.env
   aws_region            = var.aws_region
-  owner_name            = var.owner # only if the module supports this
+  owner_name            = var.owner_name
   device_name           = "/dev/sda1"
   ebs_volume_size       = "20"
   ebs_volume_type       = "gp2"
