@@ -263,5 +263,5 @@ lb_enable_deletion = false
 #################### Route 53 DNS Records ########################
 
 create_route53 = true
-record_name    = "dev.opstree.aman-dw.in"
+record_name    = "opstree.aman-dw.in"
 record_type    = "A"
