@@ -1,4 +1,4 @@
-region       = "eu-north-1"
+region       = "us-east-1"
 project_name = "otms"
 env          = "manage"
 owner        = "aayush"
@@ -14,7 +14,7 @@ instance_tenancy     = "default"
 
 subnet_names = ["public", "private"]
 subnet_cidrs = ["10.0.0.0/22", "10.0.4.0/22"]
-subnet_azs   = ["eu-north-1a", "eu-north-1a"]
+subnet_azs   = ["us-east-1a", "us-east-1a"]
 
 #################### Route Table ########################
 
