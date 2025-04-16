@@ -206,7 +206,7 @@ variable "vpc_accept" {
   type    = bool
   default = true
 }
-variable "vpc_name" {
+variable "manage_vpc" {
   description = "Name tag of the VPC to lookup"
   type        = string
   default     = ""
