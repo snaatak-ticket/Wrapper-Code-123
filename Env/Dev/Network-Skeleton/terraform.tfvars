@@ -234,7 +234,7 @@ security_groups_rule = {
 
 create_alb         = true
 alb_name           = "alb"
-lb_internal        = true
+lb_internal        = false
 lb_tpye            = "application"
 lb_enable_deletion = false
 
