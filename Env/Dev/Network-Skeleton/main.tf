@@ -33,7 +33,7 @@ module "networking_module" {
 
   # VPC Peering 
   peering_connection = var.peering_connection
-  vpc_accept = var.vpc_accept
+  vpc_accept         = var.vpc_accept
 
   #################### Security Groups ########################
 
