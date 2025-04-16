@@ -90,11 +90,8 @@ security_groups_rule = {
 
 #################### VPC Peering ########################
 
-peering_connection = true
+peering_connection = false
 vpc_accept         = true
-vpc_name           = "manage-otms-vpc"
-public_rt_name     = "manage-otms-public-rt"
-private_rt_name    = "manage-otms-private-rt"
 
 #################### Application Load Balancer ########################
 
@@ -104,7 +101,7 @@ lb_internal        = false
 lb_tpye            = "application"
 lb_enable_deletion = false
 
-#################### Route 53 DNS Records ########################
+################## Route 53 DNS Records ########################
 
 create_route53 = false
 record_name    = "dev.opstree.aman-dw.in"
