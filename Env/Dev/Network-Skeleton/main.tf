@@ -34,7 +34,7 @@ module "networking_module" {
   # VPC Peering 
   peering_connection = var.peering_connection
   vpc_accept         = var.vpc_accept
-  vpc_name           = var.vpc_name
+  manage_vpc         = var.manage_vpc
   public_rt_name     = var.public_rt_name
   private_rt_name    = var.private_rt_name
 
