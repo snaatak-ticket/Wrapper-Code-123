@@ -68,11 +68,6 @@ variable "launch_template_id" {
   default     = null
 }
 
-# variable "listener_arn" {
-#   description = "ARN of the ALB listener"
-#   type        = string
-# }
-
 variable "priority" {
   description = "Priority of the listener rule"
   type        = number
