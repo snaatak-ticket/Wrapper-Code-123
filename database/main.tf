@@ -11,7 +11,6 @@ module "redis_ec2" {
   ebs_volume_size       = var.ebs_volume_size
   ebs_volume_type       = var.ebs_volume_type
   delete_on_termination = var.delete_on_termination
-  owner_name            = var.owner_name
   instance_name         = var.instance_name[0]
   subnet_id             = data.terraform_remote_state.network.outputs.subnet_ids.dev-otms-new-new-database-subnet
 
@@ -29,7 +28,6 @@ module "postgres_ec2" {
   ebs_volume_size       = var.ebs_volume_size
   ebs_volume_type       = var.ebs_volume_type
   delete_on_termination = var.delete_on_termination
-  owner_name            = var.owner_name
   instance_name         = var.instance_name[1]
   subnet_id             = data.terraform_remote_state.network.outputs.subnet_ids.dev-otms-new-new-database-subnet
 
@@ -46,7 +44,6 @@ module "scylla_ec2" {
   ebs_volume_size       = var.ebs_volume_size
   ebs_volume_type       = var.ebs_volume_type
   delete_on_termination = var.delete_on_termination
-  owner_name            = var.owner_name
   instance_name         = var.instance_name[2]
   subnet_id             = data.terraform_remote_state.network.outputs.subnet_ids.dev-otms-new-new-database-subnet
 
