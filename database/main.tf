@@ -3,7 +3,7 @@
 module "redis_ec2" {
   source                = "./ec2"
   number_of_instances   = var.number_of_instances
-  ami_id                = data.aws_ami.redis.id
+  ami_id                = var.aws_ami
   instance_type         = var.instance_type
   key_name              = var.key_name
   security_groups       = [data.terraform_remote_state.network.outputs.all_sg_ids.redis]
@@ -21,7 +21,7 @@ module "redis_ec2" {
 module "postgres_ec2" {
   source                = "./ec2"
   number_of_instances   = var.number_of_instances
-  ami_id                = data.aws_ami.postgres.id
+  ami_id                = var.aws_ami
   instance_type         = var.instance_type
   key_name              = var.key_name
   security_groups       = [data.terraform_remote_state.network.outputs.all_sg_ids.postgresql]
@@ -38,7 +38,7 @@ module "postgres_ec2" {
 module "scylla_ec2" {
   source                = "./ec2"
   number_of_instances   = var.number_of_instances
-  ami_id                = data.aws_ami.scylla.id
+  ami_id                = var.aws_ami
   instance_type         = "t2.medium"
   key_name              = var.key_name
   security_groups       = [data.terraform_remote_state.network.outputs.all_sg_ids.scylla]
