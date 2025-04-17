@@ -2,6 +2,7 @@ number_of_instances = 1
 aws_region          = "us-east-2"
 instance_type       = "t3.small"
 ami_id              = "ami-0b3f42964e859ee0a"
+public_subnet_key = "dev-otms-public-subnet"
 key_name            = "otms_dev"
 env                 = "dev"
 project_name        = "otms"
