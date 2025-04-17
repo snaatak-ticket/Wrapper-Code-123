@@ -2,7 +2,7 @@ data "terraform_remote_state" "otms_ns" {
   backend = "s3"
 
   config = {
-    bucket = "otms-sprint5-bucket"
+    bucket = "prod-otms-bucket"
     key    = "env/dev/module/network-skeleton/terraform.tfstate"
     region = "us-east-2"
   }
@@ -11,7 +11,7 @@ data "terraform_remote_state" "otms_ns" {
 data "aws_ami" "salary_ami" {
   filter {
     name   = "name"
-    values = ["dev-otms-salary-ami"]
+    values = ["salary updated"]
   }
 }
 
@@ -20,8 +20,8 @@ data "terraform_remote_state" "frontend" {
   backend = "s3"
 
   config = {
-    bucket = "otms-sprint5-bucket"
-    key    = "env/dev/Applications/Frontend/terraform.tfstate"
+    bucket = "prod-otms-bucket"
+    key    = "env/dev/module/Applications/Frontend/terraform.tfstate"
     region = "us-east-2"
   }
 }

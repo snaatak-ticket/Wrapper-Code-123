@@ -1,7 +1,7 @@
 region           = "us-east-2"
 template_name    = "dev-otms-salary-lt"
 instance_type    = "t2.micro"
-key_name         = "otms_dev"
+key_name         = "p12"
 env              = "dev"
 owner            = "Nikita"
 project_name     = "otms"
@@ -17,7 +17,7 @@ lt_version         = "$Latest"
 
 priority            = 3
 alb_listener_action = "forward"
-path_pattern        = "/app/v1/salary/*"
+path_pattern        = "/api/v1/salary/*"
 rule_name           = "dev-otms-salary-lr"
 
 
@@ -37,9 +37,9 @@ protocol    = "HTTP"
 target_type = "instance"
 
 health_check_interval = 30
-health_check_path     = "/health"
+health_check_path     = "/actuator/health"
 health_check_protocol = "HTTP"
-health_check_timeout  = 5
-healthy_threshold     = 2
+health_check_timeout  = 20
+healthy_threshold     = 5
 unhealthy_threshold   = 2
 enable_http_listener  = false
