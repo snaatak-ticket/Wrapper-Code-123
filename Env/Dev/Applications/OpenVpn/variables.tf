@@ -68,3 +68,8 @@ variable "delete_on_termination" {
   type        = bool
   description = "Whether the volume should be deleted on instance termination"
 }
+
+ variable "public_subnet_key" {
+  description = "Key to fetch the public subnet from remote state"
+  type        = string 
+}
