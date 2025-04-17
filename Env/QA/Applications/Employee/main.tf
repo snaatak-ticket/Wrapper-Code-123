@@ -27,7 +27,7 @@ module "asg" {
   lr_tags              = local.lr_tags
   enable_http_listener = var.enable_http_listener
 
-# ALB Listener Rule Configuration (for routing traffic)
+# ASG Scaling Policy configuration
   asg_policy_name                  = var.asg_policy_name
   asg_policy_type                  = var.asg_policy_type
   estimated_instance_warmup        = var.estimated_instance_warmup
