@@ -1,8 +1,8 @@
 
 terraform {
   backend "s3" {
-    bucket         = "otms-sprint5-bucket"
-    key            = "env/dev/Applications/Frontend/terraform.tfstate"
+    bucket         = "prod-otms-bucket"
+    key            = "env/dev/module/Applications/Frontend/terraform.tfstate"
     region         = "us-east-2"
     dynamodb_table = "dev-otms-tf-lock-table"
   }
