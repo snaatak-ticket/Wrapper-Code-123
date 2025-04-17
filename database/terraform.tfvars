@@ -1,6 +1,6 @@
 number_of_instances   = "1"
 instance_type         = "t2.micro"
-key_name              = "devops"
+key_name              = "p12"
 device_name           = "/dev/sda1"
 ebs_volume_size       = "15"
 ebs_volume_type       = "gp2"
