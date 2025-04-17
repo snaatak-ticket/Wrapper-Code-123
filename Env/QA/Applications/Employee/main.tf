@@ -9,6 +9,7 @@ module "asg" {
   security_group_id = data.terraform_remote_state.otms_ns.outputs.all_sg_ids.employee
   lt_tags           = local.lt_tags
 
+# Target Group related configuration (used for ALB routing)
   tg_tags            = local.tg_tags
   asg_name           = var.asg_name
   desired_capacity   = var.desired_capacity
@@ -19,12 +20,14 @@ module "asg" {
   lt_version         = var.lt_version
   asg_tags           = local.asg_tags
 
+# ALB Listener Rule Configuration (for routing traffic)
   priority             = var.priority
   alb_listener_action  = var.alb_listener_action
   path_pattern         = var.path_pattern
   lr_tags              = local.lr_tags
   enable_http_listener = var.enable_http_listener
 
+# ALB Listener Rule Configuration (for routing traffic)
   asg_policy_name                  = var.asg_policy_name
   asg_policy_type                  = var.asg_policy_type
   estimated_instance_warmup        = var.estimated_instance_warmup
@@ -35,17 +38,22 @@ module "asg" {
   step_metric_interval_lower_bound = var.step_metric_interval_lower_bound
   step_scaling_adjustment          = var.step_scaling_adjustment
 
+# Target Group Health Check Configuration
   tg_name               = var.tg_name
   port                  = var.port
   protocol              = var.protocol
   target_type           = var.target_type
   vpc_id                = data.terraform_remote_state.otms_ns.outputs.vpc_id
+
+# Health check settings for ALB
   health_check_interval = var.health_check_interval
   health_check_path     = var.health_check_path
   health_check_protocol = var.health_check_protocol
   health_check_timeout  = var.health_check_timeout
   healthy_threshold     = var.healthy_threshold
   unhealthy_threshold   = var.unhealthy_threshold
+
+# Load Balancer and Listener
   alb_arn               = data.terraform_remote_state.otms_ns.outputs.alb_arn
   listener_arn          = local.listener_arn
 }
