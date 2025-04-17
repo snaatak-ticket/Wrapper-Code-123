@@ -4,7 +4,6 @@ module "asg" {
   region            = var.region
   template_name     = var.template_name
   ami_id            = data.aws_ami.attendance_ami.id
-  # ami_id = "ami-082b72daee78d1a26"
   instance_type     = var.instance_type
   key_name          = var.key_name
   subnet_id         = data.terraform_remote_state.otms_ns.outputs.subnet_ids.dev-otms-application-subnet

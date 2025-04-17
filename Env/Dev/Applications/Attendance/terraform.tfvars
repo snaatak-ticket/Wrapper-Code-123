@@ -1,7 +1,7 @@
 region = "us-east-2"
 template_name    = "dev-otms-attendance-lt"
 instance_type    = "t2.micro"
-key_name         = "otms_dev"
+key_name         = "p12"
 env              = "dev"
 owner            = "Aman"
 project_name     = "otms"
@@ -15,9 +15,9 @@ target_group_arn   = null
 launch_template_id = null
 lt_version         = "$Latest"
 
-priority            = 4
+priority            = 10
 alb_listener_action = "forward"
-path_pattern        = "/app/v1/attendance/*"
+path_pattern        = "/api/v1/attendance/*"
 rule_name           = "dev-otms-attendance-lr"
 
 
@@ -37,9 +37,9 @@ protocol    = "HTTP"
 target_type = "instance"
 
 health_check_interval = 30
-health_check_path     = "/health"
+health_check_path     = "/api/v1/attendance/health"
 health_check_protocol = "HTTP"
-health_check_timeout  = 5
+health_check_timeout  = 20
 healthy_threshold     = 2
 unhealthy_threshold   = 2
 enable_http_listener  = false
