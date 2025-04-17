@@ -53,7 +53,7 @@ module "scylla_ec2" {
 }
 
 module "private_dns" {
-  source              = "./rphz"
+  source              = "./PHZ"
   private_ips         = concat(module.redis_ec2.instance_private_ip, module.postgres_ec2.instance_private_ip, module.scylla_ec2.instance_private_ip)
   name_prefix         = ["redis", "postgres-db", "scylla-db"]
   route53_zone_id     = var.route53_zone_id
