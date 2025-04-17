@@ -16,3 +16,4 @@ aws_region          = "us-east-2"
 env                 = "dev"
 project_name        = "otms"
 instance_name       = ["dev-otms-Redis-ec2", "dev-otms-Postgres-ec2", "dev-otms-Scylla-ec2"]
+aws_ami = "ami-04f167a56786e4b09"
