@@ -1,7 +1,7 @@
 
 template_name                    = "dev-otms-frontend-lt"
 instance_type                    = "t2.medium"
-key_name                         = "otms_dev"
+key_name                         = "p12"
 env                              = "dev"
 owner                            = "Mohit"
 project_name                     = "otms"
