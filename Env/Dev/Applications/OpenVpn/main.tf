@@ -6,7 +6,7 @@ module "openvpn" {
   ami_id                = var.ami_id
   instance_type         = var.instance_type
   key_name              = var.key_name
-  subnet_id = data.terraform_remote_state.otms_vpc.outputs.subnet_ids["dev-otms-public-subnet"]
+  subnet_id = data.terraform_remote_state.otms_vpc.outputs.subnet_ids[var.public_subnet_key]
   security_groups       = [data.terraform_remote_state.otms_vpc.outputs.all_sg_ids.openvpn]
   env                   = var.env
   number_of_instances   = var.number_of_instances
