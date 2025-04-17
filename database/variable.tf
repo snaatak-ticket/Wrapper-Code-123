@@ -72,3 +72,8 @@ variable "name_prefix" {
   description = "Prefix to use for the A records (e.g. app-)"
   type        = string
 }
+
+variable "aws_ami" {
+  description = "Basic AMI"
+  type = string
+}
