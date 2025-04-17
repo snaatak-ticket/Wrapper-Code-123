@@ -1,7 +1,7 @@
 region           = "us-east-2"
 template_name    = "dev-otms-employee-lt"
 instance_type    = "t2.micro"
-key_name         = "otms_dev"
+key_name         = "p12"
 env              = "dev"
 owner            = "Prashant"
 project_name     = "otms"
@@ -15,9 +15,9 @@ target_group_arn   = null
 launch_template_id = null
 lt_version         = "$Latest"
 
-priority            = 3
+priority            = 2
 alb_listener_action = "forward"
-path_pattern        = "/app/v1/employee/*"
+path_pattern        = "/api/v1/employee/*"
 rule_name           = "dev-otms-employee-lr"
 
 
@@ -37,9 +37,9 @@ protocol    = "HTTP"
 target_type = "instance"
 
 health_check_interval = 30
-health_check_path     = "/health"
+health_check_path     = "/api/v1/employee/health"
 health_check_protocol = "HTTP"
-health_check_timeout  = 5
+health_check_timeout  = 20
 healthy_threshold     = 2
 unhealthy_threshold   = 2
 enable_http_listener  = false
