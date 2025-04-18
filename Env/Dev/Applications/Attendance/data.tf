@@ -11,7 +11,7 @@ data "terraform_remote_state" "otms_ns" {
 data "aws_ami" "attendance_ami" {
   filter {
     name   = "name"
-    values = ["attendance_ami"]
+    values = ["attendance ami"]
   }
 }
 
