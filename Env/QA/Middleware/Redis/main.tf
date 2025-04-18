@@ -13,8 +13,8 @@ module "redis" {
   number_of_instances   = var.number_of_instances
   aws_region            = var.aws_region
   owner_name            = var.owner
-  device_name           = "/dev/sda1"
-  ebs_volume_size       = "8"
-  ebs_volume_type       = "gp2"
-  delete_on_termination = true
+  device_name           = var.device_name
+  ebs_volume_size       = var.ebs_volume_size
+  ebs_volume_type       = var.ebs_volume_type
+  delete_on_termination = var.delete_on_termination
 }
