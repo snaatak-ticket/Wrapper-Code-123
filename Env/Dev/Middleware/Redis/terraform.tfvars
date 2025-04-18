@@ -1,8 +1,14 @@
-number_of_instances = 1
-aws_region          = "us-east-2"
-instance_type       = "t2.micro"
-key_name            = "otms_dev"
-env                 = "dev"
-project_name        = "otms"
-instance_name       = "redis"
-owner               = "Sharvari"
+number_of_instances     = 1
+aws_region              = "us-east-2"
+instance_type           = "t2.micro"
+key_name                = "otms_dev"
+env                     = "dev"
+project_name            = "otms"
+instance_name           = "redis"
+owner                   = "Sharvari"
+
+device_name             = "/dev/sda1"
+ebs_volume_size         = 8
+ebs_volume_type         = "gp2"
+delete_on_termination   = true
+ami_name_filter         = "dev-otms-redis-ami"
