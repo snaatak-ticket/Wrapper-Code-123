@@ -43,7 +43,7 @@ module "networking_module" {
   create_alb         = var.create_alb
   alb_name           = var.alb_name
   lb_internal        = var.lb_internal
-  lb_tpye            = var.lb_tpye
+  lb_type            = var.lb_type
   lb_enable_deletion = var.lb_enable_deletion
 
   # Route 53 Configuration
